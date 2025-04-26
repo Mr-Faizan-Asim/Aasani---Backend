@@ -1,5 +1,5 @@
 // controllers/conversationController.js
-const Conversation = require('../models/Conversation');
+const Conversation = require('../models/Chat');
 
 exports.initiateConversation = async (req, res) => {
   const { recipientId } = req.body;
