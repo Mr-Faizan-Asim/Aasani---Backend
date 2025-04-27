@@ -25,6 +25,7 @@ app.use(
 app.use("/api/users",    userRoutes);
 app.use('/api/provider', require('./routes/providerRoutes.js'));
 app.use('/api/chats', chatRoutes);
+app.use('/api/chats', require('./routes/chatRoutes.js'));
 
 // Global error handler (centralized)
 //app.use(errorHandler);
