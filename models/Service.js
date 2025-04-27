@@ -1,32 +1,29 @@
+// models/Service.js
 const mongoose = require("mongoose");
 
 const ServiceSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-  email: { type: String, required: true, lowercase: true },
+  email: { type: String, required: true },
   cnic: { type: String, required: true },
+  // Store images as binary data (Buffer) plus content type
   cnicPicFront: {
     data: Buffer,
     contentType: String,
+    //required: true  // Uncomment this line if you want to enforce required images.
   },
   cnicPicBack: {
     data: Buffer,
     contentType: String,
+    //required: true
   },
   userPic: {
     data: Buffer,
     contentType: String,
+    //required: true
   },
-  tags: {
-    type: [String],
-    validate: {
-      validator: arr => arr.length <= 5,
-      message: "You can specify up to 5 tags only."
-    },
-    required: true
-  },
-  description: { type: String, required: true, trim: true },
-  price: { type: Number, required: true, min: 0 },
-  location: { type: String, required: true, trim: true },
+  service: { type: String, required: true },
+  category: { type: String, required: true },
+  price: { type: Number, required: true },
   authorized: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now }
 });

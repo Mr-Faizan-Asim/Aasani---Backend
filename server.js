@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const userRoutes    = require("./routes/userRoutes");
-const serviceRoutes = require("./routes/serviceRoutes");
+
 const chatRoutes    = require("./routes/chatRoutes");
 //const { errorHandler } = require("./middleware/error");
 
@@ -23,7 +23,7 @@ app.use(
 
 // Mount routes
 app.use("/api/users",    userRoutes);
-app.use("/api/services", serviceRoutes);
+app.use('/api/provider', require('./routes/providerRoutes.js'));
 app.use('/api/chats', chatRoutes);
 
 // Global error handler (centralized)
