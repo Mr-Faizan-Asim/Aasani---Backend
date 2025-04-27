@@ -8,7 +8,6 @@ const {
   updateGuest,
   deleteGuest
 } = require('../controllers/guestController');
-const { protect } = require('../middleware/auth');
 
 router.route('/')
   .post( createGuest)
