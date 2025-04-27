@@ -16,7 +16,7 @@ app.use(express.json());
 // CORS: allow frontend
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "https://frontend-gdg-hack.vercel.app/",
+    origin:"https://frontend-gdg-hack.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true      // <-- this will add 
                       
