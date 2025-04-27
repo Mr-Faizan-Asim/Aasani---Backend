@@ -11,16 +11,16 @@ const {
 const { protect } = require('../middleware/auth');
 
 router.route('/')
-  .post(protect, createGuest)
-  .get(protect, getGuests);
+  .post( createGuest)
+  .get( getGuests);
 
 router.route('/house/:houseId')
-  .get(protect, getGuestsByHouseId);
+  .get( getGuestsByHouseId);
 
 router.route('/:id')
-  .get(protect, getGuestById)
-  .put(protect, updateGuest)
-  .delete(protect, deleteGuest);
+  .get(getGuestById)
+  .put(updateGuest)
+  .delete(deleteGuest);
 
 module.exports = router;
 
