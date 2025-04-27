@@ -125,6 +125,24 @@ exports.updateUser = async (req, res, next) => {
   }
 };
 
+
+// @desc    Get user by ID
+// @route   GET /api/users/:id
+// @access  Private
+exports.getUserById = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id)
+      .select('-password -resetPasswordToken -resetPasswordExpires');
+    if (!user) {
+      const err = new Error('User not found'); err.statusCode = 404;
+      return next(err);
+    }
+    res.json(user);
+  } catch (error) {
+    next(error);
+  }
+};
+
 // @desc    Delete user
 // @route   DELETE /api/users/:id
 // @access  Private/Admin

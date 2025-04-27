@@ -14,5 +14,6 @@ router.get('/email/:email', protect, userController.getUserByEmail);
 router.get('/id/:email', protect, userController.getUserIdByEmail);
 router.put('/:id', protect, userController.updateUser);
 router.delete('/:id', protect, userController.deleteUser);
+router.get('/:id', userController.getUserById);
 
 module.exports = router;
