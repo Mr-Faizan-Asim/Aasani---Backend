@@ -22,7 +22,9 @@ app.use(
                       
   })
 );
-
+app.get("/", (req, res) => {
+  res.send("✅ Deployed!");
+});
 // Mount routes
 app.use("/api/users",    userRoutes);
 app.use('/api/provider', require('./routes/providerRoutes.js'));
