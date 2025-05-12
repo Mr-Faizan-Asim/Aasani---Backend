@@ -55,6 +55,7 @@ exports.authUser = async (req, res, next) => {
       uuid: user.uuid,
       name: user.name,
       email: user.email,
+      role: user.role,
       token: getToken(user._id)
     });
   } catch (error) {
