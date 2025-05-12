@@ -5,7 +5,6 @@ const cors = require("cors");
 
 const userRoutes    = require("./routes/userRoutes");
 
-const chatRoutes    = require("./routes/chatRoutes");
 //const { errorHandler } = require("./middleware/error");
 
 const app = express();
@@ -29,7 +28,6 @@ app.get("/", (req, res) => {
 app.use("/api/users",    userRoutes);
 app.use('/api/provider', require('./routes/providerRoutes.js'));
 app.use('/api/chats', require('./routes/chat.js'));
-app.use('/api/chat', require('./routes/chatRoutes.js'));
 app.use('/api/blogs', require('./routes/blogRoutes.js'));
 app.use('/api/guests', require('./routes/guestRoutes.js'));
 // Global error handler (centralized)

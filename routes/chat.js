@@ -1,4 +1,3 @@
-// routes/chat.js
 const express = require("express");
 const router = express.Router();
 const Personal = require("../models/Personal");
@@ -31,7 +30,6 @@ router.post("/chat", async (req, res) => {
 });
 
 function summarize(text) {
-  // Replace this with actual summary logic or ML if needed
   return text
     .split(/[.!?]/)
     .map((s) => s.trim())
