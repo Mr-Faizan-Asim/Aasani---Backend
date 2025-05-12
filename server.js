@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 // Mount routes
 app.use("/api/users",    userRoutes);
 app.use('/api/provider', require('./routes/providerRoutes.js'));
-app.use('/api/chats', chatRoutes);
+app.use('/api/chats', require('./routes/chat.js'));
 app.use('/api/chat', require('./routes/chatRoutes.js'));
 app.use('/api/blogs', require('./routes/blogRoutes.js'));
 app.use('/api/guests', require('./routes/guestRoutes.js'));
